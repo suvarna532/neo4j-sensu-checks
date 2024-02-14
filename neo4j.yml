@@ -69,7 +69,7 @@ metadata:
     sensu.io.json_attributes: '{"occurrences":5,"opsgenie":{"tags":[":::opsgenie.tags:::"]}}'
     fatigue_check/occurrences: '5'
 spec:
-  command: /etc/sensu/plugins/neo4j-memory.sh -w 0.5 -c 0.7
+  command: /etc/sensu/plugins/neo4j-mem.sh -w 0.5 -c 0.7
   subscriptions:
   - neo4j
   publish: true
@@ -89,7 +89,7 @@ metadata:
     sensu.io.json_attributes: '{"occurrences":5,"opsgenie":{"tags":[":::opsgenie.tags:::"]}}'
     fatigue_check/occurrences: '5'
 spec:
-  command: /etc/sensu/plugins/neo4j-disk.sh -w 50 -c 70
+  command: /etc/sensu/plugins/neo4j-diskspace.sh -w 50 -c 70
   subscriptions:
   - neo4j
   publish: true
