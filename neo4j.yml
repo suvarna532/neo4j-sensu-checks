@@ -11,7 +11,7 @@ metadata:
 spec:
   command: /etc/sensu/plugins/neo4j-alive.sh -u neo4j -p GBRjQIX-h305bec-zO77HHw-5uBwvS9
   subscriptions:
-  - neo4j
+  - neoj
   publish: true
   interval: 60
   max_output_size: 1024
@@ -31,7 +31,7 @@ metadata:
 spec:
   command: /etc/sensu/plugins/neo4j-connections.sh -w 50 -c 70 -u neo4j -p GBRjQIX-h305bec-zO77HHw-5uBwvS9
   subscriptions:
-  - neo4j
+  - neoj
   publish: true
   interval: 60
   max_output_size: 1024
@@ -51,7 +51,7 @@ metadata:
 spec:
   command: /etc/sensu/plugins/neo4j-cpu.sh -w 0.5 -c 0.7
   subscriptions:
-  - neo4j
+  - neoj
   publish: true
   interval: 60
   max_output_size: 1024
@@ -71,7 +71,7 @@ metadata:
 spec:
   command: /etc/sensu/plugins/neo4j-mem.sh -w 0.5 -c 0.7
   subscriptions:
-  - neo4j
+  - neoj
   publish: true
   interval: 60
   max_output_size: 1024
@@ -91,7 +91,7 @@ metadata:
 spec:
   command: /etc/sensu/plugins/neo4j-diskspace.sh -w 50 -c 70
   subscriptions:
-  - neo4j
+  - neoj
   publish: true
   interval: 60
   max_output_size: 1024
