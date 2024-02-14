@@ -83,7 +83,7 @@ api_version: core/v2
 type: Check
 metadata:
   namespace: default
-  name: Disk-Usage_neo4j
+  name: Diskspace_neo4j
   labels: {}
   annotations:
     sensu.io.json_attributes: '{"occurrences":5,"opsgenie":{"tags":[":::opsgenie.tags:::"]}}'
