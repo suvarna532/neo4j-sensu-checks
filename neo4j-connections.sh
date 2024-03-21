@@ -56,21 +56,20 @@ else
             message_string="$connection_check"
             status_code=1
         else
-            max_connections=100
-            current_connections="$(cypher-shell -u "$username" -p "$password" "CALL dbms.listConnections()" | wc -l | awk '{print $1}')"
-            available_connections="$(echo "$max_connections-($current_connections-1)" | bc -l | tr -d '\r')"
+            current_connections_query="$(cypher-shell -u "$username" -p "$password" "CALL dbms.listConnections()" | wc -l | awk '{print $1}')"
+            current_connections="$(echo "$current_connections_query-1" | bc -l | tr -d '\r')"
 
-            if [ "$available_connections" -le "$c_connections" ]; then
+            if [ "$current_connections" -le "$c_connections" ]; then
                 status="CRITICAL"
-                message_string="Only $available_connections connections left available on Postgres"
+                message_string="The connections currently at a count of $current_connections have exceeded the threshold for critical"
                 status_code=1
-            elif [ "$available_connections" -le "$w_connections" ]; then
+            elif [ "$current_connections" -le "$w_connections" ]; then
                 status="WARNING"
-                message_string="Only $available_connections connections left available on Postgres"
+                message_string="The connections currently at a count of $current_connections have exceeded the threshold for warning"
                 status_code=2
             else
                 status="OK"
-                message_string="There are $available_connections connections available on Postgres"
+                message_string="The connections currently are at a count of $current_connections"
                 status_code=0
             fi
         fi
