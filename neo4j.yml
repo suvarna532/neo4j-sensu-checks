@@ -9,7 +9,7 @@ metadata:
     sensu.io.json_attributes: '{"occurrences":5,"opsgenie":{"tags":[":::opsgenie.tags:::"]}}'
     fatigue_check/occurrences: '5'
 spec:
-  command: /etc/sensu/plugins/neo4j-alive.sh -u neo4j -p GBRjQIX-h305bec-zO77HHw-5uBwvS9
+  command: /etc/sensu/plugins/neo4j-alive.sh -u neo4j -p neo4j
   subscriptions:
   - neoj
   publish: true
@@ -29,7 +29,7 @@ metadata:
     sensu.io.json_attributes: '{"occurrences":5,"opsgenie":{"tags":[":::opsgenie.tags:::"]}}'
     fatigue_check/occurrences: '5'
 spec:
-  command: /etc/sensu/plugins/neo4j-connections.sh -w 50 -c 70 -u neo4j -p GBRjQIX-h305bec-zO77HHw-5uBwvS9
+  command: /etc/sensu/plugins/neo4j-connections.sh -w 50 -c 70 -m 100 -u neo4j -p neo4j
   subscriptions:
   - neoj
   publish: true
